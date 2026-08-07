@@ -17,7 +17,7 @@ bit mul_pend;
 bit [1:0]mul_count;
 bit [9:0]mul_res;
 bit [9:0]exp_res;
-bit exp_err, exp_cout, exp_oflow, exp_g, exp_e, exp_l;
+logic exp_err, exp_cout, exp_oflow, exp_g, exp_e, exp_l;
 int total_tests;
 int passed_tests;
 int failed_tests;
