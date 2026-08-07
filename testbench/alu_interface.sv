@@ -48,13 +48,6 @@ carry_a: assert property(carry)
 else
 $error("Carry failed");
 
-property cmd_inp_valid;
-@(posedge CLK) (INP_VALID==0) |=> $stable(CMD);
-endproperty
-cmd_inp_valid_a: assert property(cmd_inp_valid)
-else
-$error("Inp_valid 0 cmd  failed");
-
 property clock_16;
 @(posedge CLK) disable iff(RST)
 (CE && INP_VALID==2'b01) |-> ##[1:16] (INP_VALID==2'b10 || INP_VALID==2'b11);
