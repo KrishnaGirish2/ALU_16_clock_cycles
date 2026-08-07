@@ -32,7 +32,7 @@ import test_pkg::*;
 	end
 initial begin
 //RST=1'b1;
-RST=1'b0;
+RST=1'b1;
 #8 RST=1'b0;
 //#10 RST=1'b0;
 //#15 RST=1'b0;
