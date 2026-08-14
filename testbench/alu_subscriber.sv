@@ -34,13 +34,6 @@ e: coverpoint mon.E{bins E_val={[0:1]};}
 l: coverpoint mon.L{bins L_val[]={[0:1]};}
 err: coverpoint mon.ERR{bins err_val[]={[0:1]};}
 endgroup
-/*covergroup alu_cg;
-mode1: coverpoint drv.MODE;
-cmd1: coverpoint drv.CMD;
-err1: coverpoint mon.ERR;
-err_mode: cross mode1, err1;
-err_cmd: cross cmd1, mode1;
-*/
 
  
   function new(string name = "subscriber", uvm_component parent = null);
@@ -49,7 +42,6 @@ input_imp=new("input_imp",this);
 output_imp=new("output_imp",this);
     input_cg = new();
     output_cg = new();
-//	alu_cg=new();
   endfunction
  
   function void build_phase(uvm_phase phase);
@@ -67,7 +59,6 @@ output_imp=new("output_imp",this);
  virtual function void write_output(trans t);
 mon=t;
 output_cg.sample();
-//alu_cg.sample();
 endfunction
    
   function void report_phase(uvm_phase phase);
