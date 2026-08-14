@@ -13,8 +13,8 @@ package test_pkg;
 	`include "alu_input_monitor.sv"
  `include "alu_output_monitor.sv"
 `include "alu_subscriber.sv"
-	`include "alu_agent.sv"
-
+	`include "alu_input_agent.sv"
+`include "alu_output_agent.sv"
 	`include "alu_scoreboard.sv"
         
 	`include "alu_env.sv"
