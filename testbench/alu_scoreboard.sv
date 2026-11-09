@@ -62,12 +62,20 @@ endtask
 
 task run_phase(uvm_phase phase);
 reset_ref_model();
+fork
+begin
 forever begin
 inp_mon_fifo.get(inp_mon);
-out_mon_fifo.get(out_mon);
 ref_model(inp_mon);
+end
+end
+begin
+forever begin
+out_mon_fifo.get(out_mon);
 compare_output();
 end
+end
+join
 endtask
 
 function bit two_op_operation();
